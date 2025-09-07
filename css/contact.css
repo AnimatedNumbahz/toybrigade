@@ -1,0 +1,187 @@
+/* ===========================
+   Body & Fonts
+=========================== */
+body {
+  font-family: 'Baloo 2', cursive;
+  background-color: #fffafc;
+}
+
+/* ===========================
+   Contact Hero Section
+=========================== */
+.contact-hero {
+  background: linear-gradient(135deg, #ffe4e1 0%, #ffd1dc 100%);
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
+  color: #4a4a4a;
+  padding: 6rem 1rem;
+  text-align: center;
+}
+
+.contact-hero h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-hero p {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.25rem;
+}
+
+/* ===========================
+   Cards
+=========================== */
+.card {
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(145deg, #fff1f3, #ffe0e5);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-family: 'Fredoka One', cursive;
+  color: #ff7043;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1rem;
+  color: #555;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+}
+
+.card p i {
+  color: #ff7043;
+  background: #ffe0d6;
+  border-radius: 50%;
+  padding: 10px;
+  margin-right: 12px;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.card p i:hover {
+  transform: scale(1.1);
+}
+
+/* ===========================
+   Contact Cards with Angled Background
+=========================== */
+.card.contact-card {
+  position: relative;
+  overflow: hidden;
+  background: #fff0f5;
+}
+
+.card.contact-card::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -20px;
+  width: 140%;
+  height: 140%;
+  background: linear-gradient(135deg, #ffe0e5, #fff1f3);
+  transform: rotate(-1.5deg);
+  z-index: 0;
+  border-radius: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+.card.contact-card:hover::before {
+  transform: rotate(-1deg);
+  box-shadow: 0 12px 25px rgba(255, 99, 130, 0.2);
+}
+
+.card.contact-card form,
+.card.contact-card .card-body {
+  position: relative;
+  z-index: 1; /* ensures content is on top */
+}
+
+.contact-card {
+    transform: rotate(-1.5deg); /* small angled effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: rotate(0deg) translateY(-12px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.contact-card-2 {
+    transform: rotate(1.5deg); /* small angled effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-card-2:hover {
+    transform: rotate(0deg) translateY(-12px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+
+/* ===========================
+   Form Inputs
+=========================== */
+.contact-form input,
+.contact-form textarea,
+.form-control {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 2px solid #f8bbd0;
+  border-radius: 12px;
+  font-family: 'Baloo 2', cursive;
+  font-size: 1rem;
+  background-color: #fffafc;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.form-control:focus {
+  border-color: #ff7043;
+  background-color: #fff0f6;
+  box-shadow: 0 0 8px rgba(255, 112, 67, 0.3);
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+.contact-btn {
+  display: inline-block;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 1.5rem;
+  border: none;
+  color: white;
+  background: #ff99ac;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+  background-color: #ff7a8c;
+  transform: scale(1.05);
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+  box-shadow: 0px 3px 6px rgba(255, 64, 129, 0.3);
+}

@@ -1,0 +1,53 @@
+/* ===========================
+   Shop Hero Section
+   =========================== */
+.shop-hero {
+  position: relative;
+  height: 450px; /* Adjustable height */
+  overflow: hidden;
+}
+
+.shop-hero .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%); /* Slight dark overlay */
+}
+
+.shop-hero .hero-text {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+}
+
+.shop-hero .hero-text h1,
+.shop-hero .hero-text p {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 0.75rem;
+}
+
+.shop-hero .btn-pastel {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive overlay shape */
+@media (max-width: 768px) {
+  .shop-hero .hero-overlay {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  }
+}
+
+/* ===========================
+   Hover Scale Effect
+   =========================== */
+.hover-scale {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}

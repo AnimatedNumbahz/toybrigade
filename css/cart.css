@@ -1,0 +1,223 @@
+/* ==========================
+   Buttons
+========================== */
+.btn-cart {
+  background-color: #FFD6D6;
+  color: #000;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-cart:hover {
+  background-color: #ffbaba;
+}
+
+/* Checkout Button (Pastel Blue) */
+.btn-checkout {
+  background-color: #a8d8ff; /* pastel blue */
+  color: #333;
+  font-weight: 600;
+  border: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-checkout:hover {
+  background-color: #7ec0ff; /* slightly darker pastel blue */
+  color: #fff;
+  transform: translateY(-2px);
+}
+/* ==========================
+   Modal
+========================== */
+.modal-content {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+  background: #fffafc;
+}
+
+.modal-header {
+  background-color: #ffecb3;
+  border-bottom: none;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: #333;
+  font-weight: bold;
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.modal-footer {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+  justify-content: space-between;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 10;
+}
+
+.modal-footer .btn-cart {
+  width: 100%;
+}
+
+
+/* ==========================
+   Cart Items
+========================== */
+#cartItems {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+#cartItems::-webkit-scrollbar {
+  width: 6px;
+}
+
+#cartItems::-webkit-scrollbar-thumb {
+  background: #ffd1dc;
+  border-radius: 3px;
+}
+
+#cartItems::-webkit-scrollbar-thumb:hover {
+  background: #ff9ebb;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #ffd6d6, #ffe6f0);
+}
+
+.cart-item img,
+.cart-item-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-details p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.cart-item-details small {
+  color: #777;
+}
+
+.cart-item-price {
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+/* ==========================
+   Quantity Buttons
+========================== */
+.cart-item-qty .qty-btn,
+.quantity-btn,
+.qty-btn {
+  background: #f8d9e6;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e84393;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cart-item-qty .qty-btn:hover,
+.quantity-btn:hover,
+.qty-btn:hover {
+  background-color: #e84393;
+  color: #fff;
+}
+/* ==========================
+   Quantity Buttons
+========================== */
+.cart-item-qty .qty-btn,
+.quantity-btn,
+.qty-btn {
+  background: #f8d9e6;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e84393;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cart-item-qty .qty-btn:hover,
+.quantity-btn:hover,
+.qty-btn:hover {
+  background-color: #e84393;
+  color: #fff;
+}
+
+
+/* ==========================
+   Remove Buttons
+========================== */
+.cart-item .btn-danger,
+.btn-square {
+  border-radius: 6px;
+  font-size: 1.1rem;
+  padding: 4px 12px;
+  transition: background 0.2s ease-in-out;
+}
+
+.cart-item .btn-danger:hover {
+  background-color: #a71d2a;
+}
+
+/* ==========================
+   List Group Items
+========================== */
+.list-group-item {
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-group-item .btn {
+  padding: 0.25rem 0.5rem;
+}
+
+/* ==========================
+   Empty Cart Message
+========================== */
+.empty-cart {
+  text-align: center;
+  padding: 30px 0;
+  color: #999;
+  font-style: italic;
+}

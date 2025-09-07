@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toy Brigade | Shop</title>
+  <title>Contact Us - Toy Brigade</title>
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -18,10 +19,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="./css/shop.css">
+  <link rel="stylesheet" href="css/contact.css">
 
-
-  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -31,7 +30,6 @@
     style="z-index: 2000;">
     <div class="pastel-spinner"></div>
   </div>
-
 
 
   <!-- Navbar -->
@@ -277,133 +275,56 @@
   </nav>
 
 
+  <!-- Hero Section -->
+  <section class="text-center py-5 bg-light">
+    <h1 class="fw-bold">📬 Contact Us</h1>
+    <p class="text-muted">We’d love to hear from you! Fill out the form or reach us directly.</p>
 
-  <!-- Shop Page -->
-  <!-- Hero Banner -->
-  <section class="shop-hero position-relative text-center text-white">
-    <img src="images/shop-hero.jpg" class="w-100 hero-img" alt="Shop Banner">
-
-    <!-- Angled overlay -->
-    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
-
-    <div class="hero-text position-absolute top-50 start-50 translate-middle">
-      <h1 class="display-4 splice-text">Discover Our Toys</h1>
-      <p class="lead">Fun, playful, and full of imagination for every child</p>
-      <a href="#shop-categories" class="btn btn-pastel btn-lg mt-3">Shop Now</a>
-    </div>
   </section>
 
+  <!-- Contact Content -->
+  <section class="container my-5">
+    <div class="row g-4">
 
-
-  <section class="py-5" id="shop-categories" style="background-color: #fff5f8;">
-    <div class="container">
-
-      <!-- Section Header -->
-      <div class="text-center mb-5">
-        <h1 class="section-title splice-text">Shop by Category</h1>
-        <p class="text-muted">Find toys for every age, interest, and collector's passion</p>
-      </div>
-
-      <!-- Main Category 1: Early Development Toys -->
-      <h2 class="section-title splice-text mb-4">Early Development Toys</h2>
-      <div class="row mb-5">
-        <!-- Subcategory 1: Sensory & Baby Play -->
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card category-card shadow-sm position-relative hover-scale">
-            <span class="badge bg-pink text-white position-absolute top-0 start-0 m-2">New</span>
-            <img src="images/categories/sensory.jpg" class="card-img-top" alt="Sensory & Baby Play">
-            <div class="card-body text-center">
-              <h5 class="card-title splice-text">Sensory & Baby Play</h5>
-              <a href="./category-earlydev.html#sensory" class="btn btn-pastel">Explore</a>
+      <!-- Contact Form -->
+      <div class="col-lg-6">
+        <div class="card shadow p-4 rounded-4 contact-card">
+          <h3 class="mb-3">Send us a message</h3>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-control rounded-3" placeholder="Enter your name">
             </div>
-          </div>
-        </div>
-
-        <!-- Subcategory 2: STEM & Learning Toys -->
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card category-card shadow-sm hover-scale">
-            <img src="images/categories/stem.jpg" class="card-img-top" alt="STEM & Learning Toys">
-            <div class="card-body text-center">
-              <h5 class="card-title splice-text">STEM & Learning</h5>
-              <a href="./category-earlydev.html#stem" class="btn btn-pastel">Explore</a>
+            <div class="mb-3">
+              <label class="form-label">Your Email</label>
+              <input type="email" class="form-control rounded-3" placeholder="Enter your email">
             </div>
-          </div>
-        </div>
-
-        <!-- Subcategory 3: Pretend Play & Roleplay -->
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card category-card shadow-sm hover-scale">
-            <img src="images/categories/roleplay.jpg" class="card-img-top" alt="Pretend Play & Roleplay">
-            <div class="card-body text-center">
-              <h5 class="card-title splice-text">Pretend Play & Roleplay</h5>
-              <a href="./category-earlydev.html#pretendplay" class="btn btn-pastel">Explore</a>
+            <div class="mb-3">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control rounded-3" placeholder="Subject">
             </div>
-          </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control rounded-3" rows="5" placeholder="Type your message"></textarea>
+            </div>
+            <button type="submit" class="contact-btn">Send Message</button>
+
+          </form>
         </div>
       </div>
 
-      <!-- Main Category 2: Action & Adventure Toys -->
-      <h2 class="section-title splice-text mb-4">Action & Adventure Toys</h2>
-      <div class="row mb-5">
-        <!-- Subcategories -->
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card category-card shadow-sm hover-scale">
-            <img src="images/categories/action-figures.jpg" class="card-img-top" alt="Action Figures & Superheroes">
-            <div class="card-body text-center">
-              <h5 class="card-title splice-text">Action Figures & Superheroes</h5>
-              <a href="category-actionfigures.html" class="btn btn-pastel">Explore</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card category-card shadow-sm hover-scale">
-            <img src="images/categories/vehicles.jpg" class="card-img-top" alt="Vehicles & Playsets">
-            <div class="card-body text-center">
-              <h5 class="card-title splice-text">Vehicles & Playsets</h5>
-              <a href="category-vehicles.html" class="btn btn-pastel">Explore</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card category-card shadow-sm hover-scale">
-            <img src="images/categories/outdoor.jpg" class="card-img-top" alt="Outdoor & Active Toys">
-            <div class="card-body text-center">
-              <h5 class="card-title splice-text">Outdoor & Active Toys</h5>
-              <a href="category-outdoor.html" class="btn btn-pastel">Explore</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Main Category 3: Collector’s Vault -->
-      <h2 class="section-title splice-text mb-4">Collector’s Vault</h2>
-      <div class="row mb-5">
-        <!-- Subcategories -->
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card category-card shadow-sm hover-scale">
-            <img src="images/categories/anime.jpg" class="card-img-top" alt="Anime & Pop Culture">
-            <div class="card-body text-center">
-              <h5 class="card-title splice-text">Anime & Pop Culture</h5>
-              <a href="category-anime.html" class="btn btn-pastel">Explore</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card category-card shadow-sm hover-scale">
-            <img src="images/categories/retro.jpg" class="card-img-top" alt="Retro & Nostalgia">
-            <div class="card-body text-center">
-              <h5 class="card-title splice-text">Retro & Nostalgia</h5>
-              <a href="category-retro.html" class="btn btn-pastel">Explore</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="card category-card shadow-sm hover-scale">
-            <img src="images/categories/filipino.jpg" class="card-img-top" alt="Filipino Collector's Exclusives">
-            <div class="card-body text-center">
-              <h5 class="card-title splice-text">Filipino Exclusives</h5>
-              <a href="category-filipino.html" class="btn btn-pastel">Explore</a>
-            </div>
+      <!-- Contact Info -->
+      <div class="col-lg-6 ">
+        <div class="card shadow p-4 rounded-4 contact-card-2">
+          <h3 class="mb-3">Get in Touch</h3>
+          <p><strong>📍 Address:</strong> 123 Toy Street, Playtown, PH</p>
+          <p><strong>📞 Phone:</strong> +63 912 345 6789</p>
+          <p><strong>✉️ Email:</strong> support@siatoybrigade.com</p>
+          <div class="mt-4">
+            <iframe
+              src="https://www.google.com/maps/place/Toy+Kingdom+-+SM+North+Edsa/@14.6568205,121.0278747,17z/data=!3m1!4b1!4m6!3m5!1s0x3397b6e2dcf2ade9:0xf4ee6827acaa43ae!8m2!3d14.6568153!4d121.0304496!16s%2Fg%2F1hhxq4_z3?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D">
+              width="100% height="250" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
           </div>
         </div>
       </div>
@@ -465,9 +386,10 @@
     </div>
   </footer>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./js/main.js"></script>
 </body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/main.js"></script>
 
 </html>

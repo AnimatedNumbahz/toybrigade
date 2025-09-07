@@ -1,0 +1,323 @@
+/* ==========================
+   Global Styles
+========================== */
+body {
+  font-family: "Baloo 2", cursive;
+  background-color: #fffafc; /* pastel cream/pink */
+  margin: 0;
+  padding: 0;
+}
+
+.brand-text {
+  font-family: "Fredoka One", cursive;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+}
+
+.bg-pastel {
+  background-color: #fce4ec; /* pastel pink */
+}
+
+/* Themed Spinner */
+.pastel-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 6px solid #f3f3f3; /* light pastel base */
+  border-top: 6px solid #a4c6e3; /* pastel blue (adjust to your palette) */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  box-shadow: 0 0 10px rgba(164, 198, 227, 0.5);
+}
+
+/* Spin Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide Spinner Smoothly */
+#spinner {
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#spinner.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ==========================
+   Hero Carousel
+========================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-color: #ffe4f0;
+}
+
+.hero .carousel-item img {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.carousel-caption {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.hero-title {
+  font-family: "Fredoka One", cursive;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.carousel-caption p.lead {
+  font-size: 1.3rem;
+  color: #fffbe7;
+}
+
+/* Indicators */
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #f8c8dc;
+  border: none;
+  margin: 0 6px;
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+  transform: scale(1.2);
+  background-color: #ff99cc;
+}
+
+/* Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 80% 80%;
+  filter: invert(80%) sepia(20%) saturate(300%) hue-rotate(300deg)
+    brightness(95%) contrast(90%);
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  filter: invert(65%) sepia(20%) saturate(400%) hue-rotate(320deg)
+    brightness(100%) contrast(95%);
+}
+
+/* ==========================
+   Section Titles
+========================== */
+.section-title {
+  font-family: "Fredoka One", cursive;
+  font-size: 2rem;
+  color: #ff7043;
+  text-shadow: 2px 2px #ffcc80;
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================
+   Buttons
+========================== */
+.btn-pastel {
+  background-color: #ffd1dc;
+  color: #333;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-pastel:hover,
+.btn-pastel:focus {
+  background-color: #ff9ebb;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Category Card Buttons */
+.category-card .btn-pastel {
+  background-color: #b2ebf2;
+  color: #333;
+}
+
+.category-card .btn-pastel:hover {
+  background-color: #80deea;
+  color: #fff;
+}
+
+/* ==========================
+   Cards
+========================== */
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Featured Cards */
+.featured-card {
+  height: 100%;
+  border-radius: 20px;
+  background-color: #ffecb3;
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-card:hover {
+  transform: rotate(0) scale(1.03);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.featured-card .card-img-top {
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Angled Cards */
+.angled-card {
+  border-radius: 16px;
+  background-color: #e1bee7;
+  transform: rotate(1deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.angled-card:hover {
+  transform: rotate(0) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.angled-card .card-img-top {
+  height: 190px;
+  object-fit: cover;
+}
+
+/* ==========================
+   Mission Section
+========================== */
+.mission-section {
+  background-color: #e0f7fa;
+  padding: 60px 0;
+}
+
+.mission-section img {
+  background-color: #fff9c4;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.mission-section img:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================
+   Explore Categories
+========================== */
+.explore-categories {
+  background-color: #f9fbe7;
+  padding: 80px 0;
+}
+
+.explore-categories .category-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.explore-categories .category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================
+   Featured & Angled Wrappers
+========================== */
+.featured-wrapper,
+.small-cards-wrapper {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2rem;
+}
+
+.angled-mission {
+  transform: rotate(1deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.angled-mission:hover {
+  transform: rotate(0) scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================
+   Scrollbars
+========================== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c5e1a5;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aed581;
+}
+
+/* ==========================
+   Responsive
+========================== */
+@media (max-width: 992px) {
+  .featured-card,
+  .angled-card,
+  .angled-mission {
+    transform: rotate(0);
+  }
+  .featured-wrapper,
+  .small-cards-wrapper {
+    margin-bottom: 2rem;
+  }
+  .angled-mission {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .carousel-caption p.lead {
+    font-size: 1rem;
+  }
+}

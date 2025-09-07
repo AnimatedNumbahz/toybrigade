@@ -1,0 +1,108 @@
+/* ================================
+   Pastel Angled Footer - Production Ready
+================================ */
+
+/* Footer Base */
+footer.footer {
+  position:static;
+  background-color: #f3e5f5; /* pastel lavender */
+  color: #333;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+/* Footer Title */
+.footer-title {
+  font-family: "Fredoka One", cursive;
+  font-size: 1.2rem;
+  color: #525050;
+  margin-bottom: 1rem;
+}
+
+/* Footer Logo */
+.footer-logo {
+  max-width: 100%;
+}
+
+/* Small Text */
+.footer p.small,
+.footer .small {
+  font-family: "Baloo 2", cursive;
+  color: #666;
+}
+
+/* Divider */
+.footer .border-top {
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ================================
+   Footer Cards
+================================ */
+.footer-card {
+  background-color: #fff0f6;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1.5deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, margin-top 0.3s ease;
+}
+.footer-card:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+.footer-card:nth-child(1) {
+  margin-top: 0;
+  background-color: #ffe4e1; /* soft pink */
+}
+.footer-card:nth-child(2) {
+  margin-top: 20px;
+  background-color: #fff1e6; /* soft peach */
+}
+.footer-card:nth-child(3) {
+  margin-top: 40px;
+  background-color: #e6f7ff; /* soft sky blue */
+}
+.footer-card:nth-child(4) {
+  margin-top: 60px;
+  background-color: #fff0f5; /* soft lavender */
+}
+.footer-card:hover {
+  transform: rotate(0deg) translateY(-12px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   Footer Links
+================================ */
+.footer-link {
+  font-size: 1rem;
+  color: #ff4081;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s, transform 0.3s;
+}
+.footer-link:hover {
+  color: #ba68c8; /* pastel purple */
+  text-decoration: underline;
+  transform: translateX(4px);
+}
+
+/* ================================
+   Social Icons
+================================ */
+.social-icons a {
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color: #ff4081;
+  transition: transform 0.3s, color 0.3s;
+}
+.social-icons a:hover {
+  transform: translateY(-3px);
+  color: #ffb74d; /* pastel orange */
+}
+
+/* ================================
+   Responsive
+================================ */
+
