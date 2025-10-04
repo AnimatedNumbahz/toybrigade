@@ -1,0 +1,65 @@
+/* orders.css — pastel status badges (accessible contrast) */
+
+.badge.status-badge {
+    display: inline-block;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid transparent;
+    letter-spacing: .2px;
+}
+
+
+/* Pending (soft yellow) */
+
+.badge.status-badge.status-pending {
+    background: #FFF4CC;
+    color: #6a5400;
+    border-color: #FFE08A;
+}
+
+
+/* Processing (soft sky) */
+
+.badge.status-badge.status-processing {
+    background: #DFF3FF;
+    color: #0b5c7a;
+    border-color: #B8E3FA;
+}
+
+
+/* Shipped (lavender) */
+
+.badge.status-badge.status-shipped {
+    background: #EAE8FF;
+    color: #2f3a8f;
+    border-color: #CCC8FF;
+}
+
+
+/* Completed (mint) */
+
+.badge.status-badge.status-completed {
+    background: #E3F8E6;
+    color: #165b2d;
+    border-color: #BFECC6;
+}
+
+
+/* Cancelled (rose) */
+
+.badge.status-badge.status-cancelled {
+    background: #FFE3E3;
+    color: #7f1d1d;
+    border-color: #FFC7C7;
+}
+
+
+/* Fallback */
+
+.badge.status-badge.status-default {
+    background: #EEE;
+    color: #444;
+    border-color: #DDD;
+}

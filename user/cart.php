@@ -332,7 +332,7 @@ $subtotal = 0;
                     <input type="checkbox" class="form-check-input item-checkbox" name="selected_items[]" 
                            value="<?php echo $item['productID']; ?>" data-price="<?php echo $item['price']; ?>" 
                            data-quantity="<?php echo $item['quantity']; ?>">
-                    <img src="../images/products/<?php echo $item['prodImage']; ?>" alt="<?php echo $item['productName']; ?>" class="cart-img me-3">
+                    <img src="../uploads/<?php echo $item['prodImage']; ?>" alt="<?php echo $item['productName']; ?>" class="cart-img me-3">
                     <div class="flex-grow-1">
                       <h6 class="mb-1"><?php echo $item['productName']; ?></h6>
                       <p class="mb-1 price-tag">₱<?php echo number_format($item['price'], 2); ?></p>

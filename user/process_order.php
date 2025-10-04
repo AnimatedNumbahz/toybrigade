@@ -1,6 +1,5 @@
 <?php
 include "connection.php";
-include "auth_session.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['place_order'])) {
     $customerID = $_SESSION['customerID'];

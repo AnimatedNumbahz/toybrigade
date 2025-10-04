@@ -3,3 +3,6 @@ password:boostandmagnum
 
 Email2:buffa@desire.com
 password:zombie
+
+admin1:admin@test.com
+password:admin123

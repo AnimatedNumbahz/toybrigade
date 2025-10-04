@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2025 at 08:49 PM
+-- Generation Time: Oct 04, 2025 at 05:09 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -92,16 +92,18 @@ CREATE TABLE `customer` (
   `email` varchar(64) NOT NULL,
   `address` varchar(255) NOT NULL,
   `lytnumber` int(11) NOT NULL,
-  `password` char(255) NOT NULL
+  `password` char(255) NOT NULL,
+  `status` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`customerID`, `fname`, `lname`, `email`, `address`, `lytnumber`, `password`) VALUES
-(1, 'Ace', 'Ukiyo', 'god@desire.com', 'Japan Surplus', 777555, '$2y$10$0VWI4rFxzH7g.C8ueNFlyOQ8kFmCVZhqWK.8cQk4z9nrw0aGwzPoi'),
-(2, 'Azuma', 'Michinaga', 'buffa@desire.com', 'Umingan Pangasinan', 42069, '$2y$10$Cbfu/PzdKOGwoaUKqur5me0v1SQu4nvoi9wzJkjes9dlH5ujTSTnq');
+INSERT INTO `customer` (`customerID`, `fname`, `lname`, `email`, `address`, `lytnumber`, `password`, `status`, `created_at`) VALUES
+(1, 'Ace', 'Ukiyo', 'god@desire.com', 'Japan Surplus', 777555, '$2y$10$0VWI4rFxzH7g.C8ueNFlyOQ8kFmCVZhqWK.8cQk4z9nrw0aGwzPoi', 0, '0000-00-00 00:00:00'),
+(2, 'Azuma', 'Michinaga', 'buffa@desire.com', 'Umingan Pangasinan', 42069, '$2y$10$Cbfu/PzdKOGwoaUKqur5me0v1SQu4nvoi9wzJkjes9dlH5ujTSTnq', 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -117,20 +119,6 @@ CREATE TABLE `orderitems` (
   `price` decimal(10,2) NOT NULL,
   `lineTotal` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `orderitems`
---
-
-INSERT INTO `orderitems` (`orderItemID`, `orderID`, `productID`, `quantity`, `price`, `lineTotal`) VALUES
-(1, 1, 41, 1, 342.99, 342.99),
-(2, 1, 42, 2, 2500.00, 5000.00),
-(3, 1, 43, 1, 5400.00, 5400.00),
-(4, 2, 43, 1, 5400.00, 5400.00),
-(5, 2, 42, 1, 2500.00, 2500.00),
-(6, 2, 41, 1, 342.99, 342.99),
-(7, 3, 37, 1, 1499.99, 1499.99),
-(8, 4, 42, 1, 2500.00, 2500.00);
 
 -- --------------------------------------------------------
 
@@ -149,16 +137,6 @@ CREATE TABLE `orders` (
   `status` varchar(50) DEFAULT 'Pending',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`orderID`, `customerID`, `fullname`, `email`, `phone`, `address`, `total`, `status`, `created_at`) VALUES
-(1, 1, 'Kent Regel Guballa', 'god@desire.com', '092123', 'Morayta, Aurora', 10742.99, 'Pending', '2025-09-24 01:39:42'),
-(2, 1, 'Kent Regel Guballa', 'god@desire.com', '092123', 'Quezon City', 8242.99, 'Pending', '2025-09-24 01:48:16'),
-(3, 1, 'Ukiyo Ace', 'god@desire.com', '09995556942', 'Desire Grand Prix', 1499.99, 'Pending', '2025-09-24 18:03:32'),
-(4, 1, 'Ukiyo Ace', 'god@desire.com', '09995556942', 'Grand Prix Desire', 2500.00, 'Pending', '2025-09-24 18:47:07');
 
 -- --------------------------------------------------------
 
@@ -187,8 +165,10 @@ INSERT INTO `products` (`productID`, `productName`, `price`, `stock`, `productDe
 (39, 'Science Kit', 800.99, 30, 'Educational science kit', '', 0, 3),
 (40, 'Teddy Bear', 600.99, 40, 'Soft plush teddy bear', 'images/pup-toy-baby.svg', 0, 4),
 (41, 'Building Blocks Set', 342.99, 20, '500-piece building blocks set', '1758639045_ShopBanner.png', 0, 5),
-(42, 'Kent', 2500.00, 24, '', '', 0, 1),
-(43, 'Avengers Iron Man Action Figure', 5400.00, 42, '', '', 0, 1);
+(42, 'Kent', 2500.00, 24, '', '1758881611_caveman kent.png', 0, 1),
+(43, 'Avengers Iron Man Action Figure', 5400.00, 42, '', '', 0, 1),
+(44, 'Borzoi', 3900.00, 500, '', '1759069762_Mimi.jpg', 0, 4),
+(45, 'Rata Milk', 765.00, 918, '', '1759069871_ratatan-milk.png', 0, 3);
 
 -- --------------------------------------------------------
 
@@ -287,7 +267,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -299,19 +279,19 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `orderitems`
 --
 ALTER TABLE `orderitems`
-  MODIFY `orderItemID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `orderItemID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `subcategories`

@@ -1,211 +1,125 @@
-/* ===========================
-   Shop Hero Section (cleaned)
-   =========================== */
-.shop-hero {
-  position: relative;
-  height: 450px; /* Adjustable height */
-  overflow: hidden;
+.product-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #f8d7da;
+    border-radius: 15px;
+    overflow: hidden;
 }
-.shop-hero .hero-img {
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.price-tag {
+    font-weight: bold;
+    color: #e83e8c;
+    font-size: 1.2rem;
+}
+
+.stock-info {
+    font-size: 0.9rem;
+}
+
+.in-stock {
+    color: #28a745;
+}
+
+.low-stock {
+    color: #ffc107;
+}
+
+.out-of-stock {
+    color: #dc3545;
+}
+
+.sort-select:focus {
+    border-color: #f8d7da;
+    box-shadow: 0 0 0 0.25rem rgba(248, 215, 218, 0.25);
+}
+
+.load-more-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#loadMoreBtn {
+    background-color: #f8d7da;
+    border: none;
+    color: #333;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+#loadMoreBtn:hover {
+    background-color: #e83e8c;
+    color: white;
+    transform: translateY(-3px);
+}
+
+#loadMoreBtn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+
+/* ===== Pastel Hero Banner (50% viewport) ===== */
+
+.shop-hero {
+    /* Fill about half of the viewport height */
+    min-height: 50vh;
+    position: relative;
+    overflow: hidden;
+    /* Soft pastel gradient background */
+    background: linear-gradient(135deg, #FFE6F0 0%, #E8F0FF 50%, #EAF7F2 100%);
+}
+
+
+/* Make the hero image softly visible (optional), but let the pastel show */
+
+
+/* .shop-hero .hero-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(62%);
+  opacity: 0.18;             
+  pointer-events: none;
+}  */
+
+
+/* Soft overlay tint for depth (on top of image, under text) */
+
+.shop-hero .hero-overlay {
+    background: radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.55), transparent 60%), linear-gradient(120deg, rgba(255, 215, 235, 0.35), rgba(197, 226, 255, 0.35));
 }
+
+
+/* Ensure hero text is centered and readable */
+
 .shop-hero .hero-text {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  text-align: center;
-}
-.shop-hero .hero-text h1,
-.shop-hero .hero-text p {
-  margin-bottom: .6rem;
-  text-shadow: 0 2px 10px rgba(0,0,0,.35);
-}
-.shop-hero .btn-pastel { position: relative; z-index: 2; }
-@media (max-width: 768px) {
-  .shop-hero .hero-overlay {
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-  }
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ===========================
-   Reusable Effects (cleaned)
-   =========================== */
-.hover-scale {
-  border-radius: 14px;
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.hover-scale:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 18px rgba(0,0,0,.10);
-}
-
-/* =========================================================
-   Dynamic “All Products” section (theme-aligned, lighter)
-   ========================================================= */
-.section-gap { padding: 3rem 0; background-color: #fff; }
-
-.tb-toolbar .pastel-input,
-.tb-toolbar .form-select {
-  border-radius: 14px;
-  border: 2px solid rgba(255,182,193,.28);
-  background: #fff;
-  box-shadow: 0 1px 0 rgba(0,0,0,.02);
-}
-.tb-toolbar .pastel-input:focus,
-.tb-toolbar .form-select:focus {
-  outline: none;
-  border-color: rgba(255,182,193,.6);
-  box-shadow: 0 0 0 .18rem rgba(255,182,193,.22);
-}
-.pastel-input-group .input-group-text {
-  border-radius: 14px 0 0 14px;
-  border: 2px solid rgba(255,182,193,.28);
-  border-right: 0;
-  background: #fff9fb;
-}
-
-/* Cards: lighter shadow, consistent sizing */
-#tb-grid .card {
-  border: 0;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 4px 14px rgba(255,182,193,.16);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-#tb-grid .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(255,182,193,.22);
-}
-#tb-grid .card img {
-  height: 190px;
-  object-fit: cover;
-}
-#tb-grid .card .card-body { padding: .9rem 1rem 1.05rem; }
-#tb-grid .card .card-title { font-weight: 600; letter-spacing: .2px; }
-#tb-grid .card .text-muted { color: #7f7f7f !important; }
-
-/* Price accent (subtle) */
-#tb-grid .card .price {
-  font-weight: 700;
-  display: inline-block;
-  position: relative;
-}
-#tb-grid .card .price::after {
-  content: "";
-  position: absolute; left: 0; right: 0; bottom: -4px;
-  height: 3px; border-radius: 6px;
-  background: linear-gradient(90deg, #ffdce4, #ffefc7);
-  opacity: .9;
-}
-
-/* Buttons inherit your pastel look */
-#tb-grid .card .btn { border-radius: 14px; }
-
-/* ============ Nav Cart Icon (theme-aligned) ============ */
-
-/* Link hit area & subtle hover that matches your pastel vibe */
-.tb-cart-link {
-  padding: .35rem .5rem;
-  border-radius: 14px;
-  line-height: 1;
-  position: relative;
-}
-
-.tb-cart-link:hover,
-.tb-cart-link:focus {
-  background: rgba(255, 182, 193, 0.18); /* soft pink hover */
-  text-decoration: none;
-}
-
-/* Icon sizing & color harmony with your palette */
-.tb-cart-icon {
-  display: inline-block;
-  vertical-align: middle;
-  transform: translateY(1px);
-  color: #444; /* adapt if your nav uses a different base color */
-}
-.playful-nav .tb-cart-icon { color: inherit; } /* inherit if your nav sets text color */
-
-/* Red notification dot (absolute positioned) */
-/* Force navbar badge styling */
-.tb-badge-dot {
-  position: absolute;
-  top: 0.15rem;
-  right: 0.2rem;
-  width: 12px;
-  height: 12px;
-  background: #dc3545; /* bootstrap red */
-  border: 2px solid #fff;
-  border-radius: 50%;
-  display: inline-block !important;
-}
-
-
-/* Animated pop when first shown */
-.tb-badge-dot:not(.d-none) {
-  animation: tb-pop .22s ease;
-}
-@keyframes tb-pop {
-  from { transform: scale(0.6); opacity: .4; }
-  to   { transform: scale(1);   opacity: 1;  }
-}
-
-
-
-/* ==============================
-   Cart page tweaks (theme-aligned)
-   ============================== */
-
-#cart-list .btn.btn-outline-secondary {
-  border-color: rgba(255, 182, 193, 0.55);
-}
-#cart-list .btn.btn-outline-secondary:hover {
-  background: rgba(255, 182, 193, 0.12);
-  border-color: rgba(255, 182, 193, 0.85);
-}
-
-#cart-list .qty-input {
-  border: 2px solid rgba(255, 182, 193, 0.35);
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
-}
-
-.summary-card .btn.btn-pastel {
-  border-radius: 14px;
-}
-
-/* Checkout sugar */
-#review-items .small { color:#8b8b8b !important; }
-.btn.btn-pastel { border-radius:14px; }
-
-/* Recommendations */
-#reco-cart .card img { height: 180px; object-fit: cover; }
-#reco-cart .card { border-radius: 18px; box-shadow: 0 6px 16px rgba(255, 182, 193, 0.18); }
-
-/* Trending Now section */
-#reco-shop .card img { height: 180px; object-fit: cover; }
-#reco-shop .card { border-radius: 18px; box-shadow: 0 6px 16px rgba(255, 182, 193, 0.18); }
-
-/* Thank-You recommendations */
-#reco-thanks .card img { height: 180px; object-fit: cover; }
-#reco-thanks .card { border-radius: 18px; box-shadow: 0 6px 16px rgba(255,182,193,.18); }
-
-/* Responsive tweaks */
 @media (max-width: 576px) {
-  .tb-toolbar .input-group,
-  .tb-toolbar .form-select { width: 100%; }
+    .shop-hero {
+        min-height: 45vh;
+    }
+    .shop-hero .display-4 {
+        font-size: 1.9rem;
+    }
+    .shop-hero .lead {
+        font-size: 1rem;
+    }
 }
-.cart-count-pill {
-  background: #fff;       /* white background */
-  color: #000;            /* black text */
-  font-size: 0.75rem;     /* slightly small for elegance */
-  font-weight: 500;       /* medium weight */
-  padding: 2px 6px;       /* pill spacing */
-  border-radius: 10px;    /* rounded pill shape */
-  border: 1px solid #ddd; /* subtle border so it doesn’t blend into white nav */
-}
+
+
+/* ===== End Pastel Hero ===== */

@@ -1,0 +1,4 @@
+.wish-hero { background:#fff5f8; }
+    .wish-card { border-radius:18px; box-shadow:0 6px 16px rgba(255,182,193,.18); }
+    #wish-grid .card img { height: 180px; object-fit: cover; }
+    #wish-grid .card { border-radius:18px; box-shadow:0 6px 16px rgba(255,182,193,.18); }

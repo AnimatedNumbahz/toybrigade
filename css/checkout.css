@@ -1,0 +1,14 @@
+    .checkout-container {
+        max-width: 960px;
+        margin: auto;
+    }
+    
+    .checkout-card {
+        border-radius: 18px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+    
+    .form-section-title {
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
