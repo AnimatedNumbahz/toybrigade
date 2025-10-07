@@ -51,8 +51,8 @@ try {
             'invoice_paid' => ['email'],
             'invoice_expired' => ['email']
         ],
-        'success_redirect_url' => 'http://localhost/toyborrow/user/pay_success.php',
-        'failure_redirect_url' => 'http://localhost/toyborrow/user/pay_fail.php',
+        'success_redirect_url' => 'http://localhost/toybrigade/user/pay_success.php',
+        'failure_redirect_url' => 'http://localhost/toybrigade/user/pay_fail.php',
         'fees' => [
             [
                 'type' => 'Delivery',
