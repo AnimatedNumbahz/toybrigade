@@ -18,7 +18,7 @@ $user_id = $_SESSION['customerID'];
 $message = '';
 
 // Fetch user data
-$query = "SELECT fname, lname, email FROM customer WHERE customerID = $user_id";
+$query = "SELECT fname, lname, email, address, lytnumber FROM customer WHERE customerID = $user_id";
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
 
@@ -32,6 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_fname = $_POST['fname'] ?? $user['fname'];
     $new_lname = $_POST['lname'] ?? $user['lname'];
     $new_email = $_POST['email'] ?? $user['email'];
+    $new_address = $_POST['address'] ?? $user['address'];
+    $new_lytnumber = $_POST['lytnumber'] ?? $user['lytnumber'];
     $new_password = $_POST['password'] ?? '';
     $confirm_password = $_POST['confirm_password'] ?? '';
 
@@ -43,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (!empty($new_password) && $new_password !== $confirm_password) {
         $message = "Passwords do not match.";
     } else {
-        // Update name and email
-        $update_query = "UPDATE customer SET fname = '$new_fname', lname = '$new_lname', email = '$new_email' WHERE customerID = $user_id";
+        // Update name, email, address and contact number
+        $update_query = "UPDATE customer SET fname = '$new_fname', lname = '$new_lname', email = '$new_email', address = '$new_address', lytnumber = '$new_lytnumber' WHERE customerID = $user_id";
         if (mysqli_query($conn, $update_query)) {
             $message = "Profile updated successfully.";
             // Update session data
@@ -54,6 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user['fname'] = $new_fname;
             $user['lname'] = $new_lname;
             $user['email'] = $new_email;
+            $user['address'] = $new_address;
+            $user['lytnumber'] = $new_lytnumber;
         } else {
             $message = "Error updating profile: " . mysqli_error($conn);
         }
@@ -93,6 +97,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form-group">
                 <label for="email" class="form-label">Email:</label>
                 <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="address" class="form-label">Shipping Address:</label>
+                <textarea class="form-control" id="address" name="address" rows="3" required><?php echo htmlspecialchars($user['address']); ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="lytnumber" class="form-label">Contact Number:</label>
+                <input type="text" class="form-control" id="lytnumber" name="lytnumber" value="<?php echo htmlspecialchars($user['lytnumber']); ?>" required>
             </div>
             <div class="form-group">
                 <label for="password" class="form-label">New Password (leave blank to keep current):</label>

@@ -45,43 +45,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['place_order'])) {
     $address = $_POST['address'] ?? '';
     $shippingMethod = $_POST['shippingMethod'] ?? '';
 
-    // Calculate shipping cost
-    $shippingCost = 0;
-    switch ($shippingMethod) {
-        case 'standard':
-            $shippingCost = 150;
-            break;
-        case 'express':
-            $shippingCost = 350;
-            break;
-        case 'pickup':
-            $shippingCost = 0;
-            break;
+    // Validate required fields
+    if (empty($firstName) || empty($lastName) || empty($email) || empty($phone) || empty($address)) {
+        $error = "Please fill in all required fields.";
+    } else {
+        // Calculate shipping cost
+        $shippingCost = 0;
+        switch ($shippingMethod) {
+            case 'standard':
+                $shippingCost = 150;
+                break;
+            case 'express':
+                $shippingCost = 350;
+                break;
+            case 'pickup':
+                $shippingCost = 0;
+                break;
+        }
+
+        $totalAmount = $subtotal + $shippingCost;
+
+        // Store order information in session WITHOUT creating database record yet
+        $_SESSION['current_order'] = [
+            'items' => $cart_items,
+            'subtotal' => $subtotal,
+            'shipping_cost' => $shippingCost,
+            'total' => $totalAmount,
+            'shipping_method' => $shippingMethod,
+            'customer_info' => [
+                'firstName' => $firstName,
+                'lastName' => $lastName,
+                'email' => $email,
+                'phone' => $phone,
+                'address' => $address
+            ]
+        ];
+
+        // Redirect to payment.php
+        header('Location: payment.php');
+        exit();
     }
-
-    $totalAmount = $subtotal + $shippingCost;
-
-    // Store order information in session WITHOUT creating database record yet
-    $_SESSION['current_order'] = [
-        'items' => $cart_items,
-        'subtotal' => $subtotal,
-        'shipping_cost' => $shippingCost,
-        'total' => $totalAmount,
-        'shipping_method' => $shippingMethod,
-        'customer_info' => [
-            'firstName' => $firstName,
-            'lastName' => $lastName,
-            'email' => $email,
-            'phone' => $phone,
-            'address' => $address
-        ]
-    ];
-
-    // Redirect to payment.php
-    header('Location: payment.php');
-    exit();
-} else {
-    $error = "Failed to place order. Please try again.";
 }
 
 
@@ -427,7 +430,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['place_order'])) {
                   </select>
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-pastel" name="place_order">Place Order & Continue to Payment</button>
+                  <button type="submit" class="btn btn-pastel" name="place_order">Continue to Payment</button>
                 </div>
               </div>
             </form>

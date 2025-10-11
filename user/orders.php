@@ -1,10 +1,10 @@
 <?php
-session_start();
 // DEV (remove in prod)
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 include 'connection.php';
+include 'auth_session.php';
 
 $customerID = $_SESSION['customerID'] ?? null;
 $isAdmin = isset($_SESSION['adminID']) && isset($_SESSION['admin_role']);

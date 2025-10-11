@@ -285,7 +285,7 @@ include 'connection.php';
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-tachometer-alt me-1"></i> Dashboard</a></li>
         <li class="nav-item"><a class="nav-link" href="Inventory.php"><i class="fas fa-box me-1"></i> Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart me-1"></i> Orders</a></li>
+        <li class="nav-item"><a class="nav-link" href="orders.php"><i class="fas fa-shopping-cart me-1"></i> Orders</a></li>
         <li class="nav-item">
           <a class="nav-link" href="customer.php">
             <i class="fas fa-users me-1"></i> Customers
